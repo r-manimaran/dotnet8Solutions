@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingRefit", "UsingRefit\UsingRefit.csproj", "{2A122D1E-AE2C-4E8C-A799-3AD23E560499}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "usinguuid", "usinguuid\usinguuid.csproj", "{49D63A03-E60B-4F1B-A3AE-F25F55465977}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2A122D1E-AE2C-4E8C-A799-3AD23E560499}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A122D1E-AE2C-4E8C-A799-3AD23E560499}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A122D1E-AE2C-4E8C-A799-3AD23E560499}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49D63A03-E60B-4F1B-A3AE-F25F55465977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49D63A03-E60B-4F1B-A3AE-F25F55465977}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49D63A03-E60B-4F1B-A3AE-F25F55465977}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49D63A03-E60B-4F1B-A3AE-F25F55465977}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
