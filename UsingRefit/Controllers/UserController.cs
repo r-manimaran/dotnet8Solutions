@@ -23,11 +23,11 @@ namespace UsingRefit.Controllers
             return response;
         }
 
-        [HttpGet("{id}")]
-        public Task<User> GetUserById(int id)
-        {
-            var response = _userApi.GetUserById(id);
-            return response;
-        }
+        //[HttpGet("{id}")]
+        //public Task<User> GetUserById(int id)
+        //{
+        //    var response = _userApi.GetUserById(id);
+        //    return response;
+        //}
     }
 }
