@@ -1,0 +1,6 @@
+@EmailTriggerUsingFlluentEmail_HostAddress = http://localhost:5190
+
+GET {{EmailTriggerUsingFlluentEmail_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
