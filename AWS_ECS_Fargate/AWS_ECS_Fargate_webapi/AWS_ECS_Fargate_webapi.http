@@ -1,0 +1,6 @@
+@AWS_ECS_Fargate_webapi_HostAddress = http://localhost:5251
+
+GET {{AWS_ECS_Fargate_webapi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
