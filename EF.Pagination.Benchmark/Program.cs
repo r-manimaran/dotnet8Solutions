@@ -10,3 +10,5 @@ using (var context = new AppDbContext())
     DataSeeder.SeedData(context);
 }
 */
+
+BenchmarkDotNet.Running.BenchmarkRunner.Run<PaginationBenchmark>();
