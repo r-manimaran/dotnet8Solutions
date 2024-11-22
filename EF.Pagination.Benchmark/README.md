@@ -5,13 +5,13 @@ dotnet ef database update
 
 ![alt text](Images/image-1.png)
 
-![alt text](Images\image.png)
+![alt text](Images/image.png)
 
-![alt text](image-2.png)
+![alt text](Images/image-2.png)
 
-![alt text](image-4.png)
+![alt text](Images/image-4.png)
 
-![alt text](image-3.png)
+![alt text](Images/image-3.png)
 
 **Execution:**
 ```bash
@@ -24,30 +24,30 @@ dotnet publish -c Release
 ```
 **Benchmark Results**
 
-![alt text](image-5.png)
+![alt text](Images/image-5.png)
 
-![alt text](image-6.png)
+![alt text](Images/image-6.png)
 
 **SQL Server Query Execution and Plans**
 
-![alt text](image-7.png)
+![alt text](Images/image-7.png)
 
 - Enable the Query Execution plan in the SQL server and execute the query.
 
 **Query 1:**
 
-  ![alt text](image-8.png)
+  ![alt text](Images/image-8.png)
 
-  ![alt text](image-9.png)
+  ![alt text](Images/image-9.png)
 
-  ![alt text](image-10.png)
+  ![alt text](Images/image-10.png)
 
 **Query 2:**
 
-![alt text](image-11.png)
+![alt text](Images/image-11.png)
 
 **Query 3:**
-![alt text](image-12.png)
+![alt text](Images/image-12.png)
 
 **Pagination Techniques**
 
