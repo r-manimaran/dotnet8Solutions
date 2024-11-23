@@ -1,6 +1,8 @@
-﻿namespace Pagination.Domain;
+﻿using Pagination.Domain.Models;
 
-public interface IRepository
+namespace Pagination.Domain;
+
+public interface IRepository<TEntity> where TEntity : Entity
 {
-
+    Task<PagedResponseOffset<TEntity>> GetWithOffsetPagination(int pageNumber, int pageSize);
 }

@@ -1,6 +1,6 @@
 ﻿namespace Pagination.Domain;
 
-public interface IOrderRepository
+public interface IOrderRepository : IRepository<Order>
 {
 
 }

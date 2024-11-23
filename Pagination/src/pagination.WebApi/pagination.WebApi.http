@@ -1,6 +1,16 @@
 @pagination.WebApi_HostAddress = http://localhost:5288
-
-GET {{pagination.WebApi_HostAddress}}/weatherforecast/
+# Get Orders using Offset Pagination
+GET {{pagination.WebApi_HostAddress}}/api/Orders/GetWithGenericOffsetPagination?pageNumber=1&pageSize=10
 Accept: application/json
 
 ###
+# Get Products using Keyset Pagination
+GET {{pagination.WebApi_HostAddress}}/api/Products/GetWithKeysetPagination?reference=0&pageSize=10
+Accept: application/json
+
+###
+# Get Products using OffSet pagination
+Get {{pagination.WebApi_HostAddress}}/api/Products/GetWithOffsetPagination?pageNumber=1&pageSize=10
+Accept: application/json
+
+
