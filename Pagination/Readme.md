@@ -23,23 +23,23 @@ There are two ways to implement pagination.
 - The Key must be some sortable property such as Sequential id or a date-time property that we can compare. 
 
 **Database creation and seeding**
-![alt text](images\image.png)
+![alt text](images/image.png)
 
 **Endpoints: Products**
 
-![alt text](images\image-1.png)
+![alt text](images/image-1.png)
 
-![alt text](images\image-4.png)
+![alt text](images/image-4.png)
 
-![alt text](images\image-2.png)
+![alt text](images/image-2.png)
 
-![alt text](images\image-3.png)
+![alt text](images/image-3.png)
 
 **Endpoints:Orders**
 
-![alt text](images\image-6.png)
+![alt text](images/image-6.png)
 
-![alt text](images\image-5.png)
+![alt text](images/image-5.png)
 
 
 **Offset vs Keyset pagination consideration and usecases**:
