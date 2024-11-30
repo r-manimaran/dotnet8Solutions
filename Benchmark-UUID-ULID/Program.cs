@@ -8,4 +8,5 @@ using (var context = new AppDbContext())
     context.Database.EnsureCreated();
 }
 
-BenchmarkDotNet.Running.BenchmarkRunner.Run<DatabaseInsertBenchmark>();
+//BenchmarkDotNet.Running.BenchmarkRunner.Run<DatabaseInsertBenchmark>();
+BenchmarkDotNet.Running.BenchmarkRunner.Run<DatabaseQueryBenchmark>();

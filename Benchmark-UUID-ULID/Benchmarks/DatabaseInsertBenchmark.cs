@@ -8,7 +8,7 @@ namespace Benchmark_UUID_ULID.Benchmarks;
 [MemoryDiagnoser]
 public class DatabaseInsertBenchmark
 {
-    [Params(1_000_000)]
+    [Params(1_000_0)]
     public int Size { get; set; }
 
     [Benchmark]
