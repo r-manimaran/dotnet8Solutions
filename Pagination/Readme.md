@@ -43,6 +43,7 @@ There are two ways to implement pagination.
 
 
 **Offset vs Keyset pagination consideration and usecases**:
+
 - Consider Keyset pagination where you do not need to jump to a random page, instead you only need to access the previous and the next page.
 - Consider where you want to create an endless scroll content application such as showing posts on social media etc..
  
@@ -55,7 +56,7 @@ There are two ways to implement pagination.
   - **Pros:**
     - Possible to jump to a random page
     - Easier implementation
-  -**Cons:**
+  - **Cons:**
     - Can possibly miss or duplicate items
     - Not performant for large data sets
 
