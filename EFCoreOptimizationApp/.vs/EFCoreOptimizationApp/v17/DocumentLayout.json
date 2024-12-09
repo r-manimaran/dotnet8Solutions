@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Maran\\Study\\Git\\Dotnet\\dotnet-EFCore\\EFCoreOptimizationApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FEC33085-F704-4861-9937-11E288A98ADC}|AuthorSelector\\AuthorSelector.csproj|c:\\maran\\study\\git\\dotnet\\dotnet-efcore\\efcoreoptimizationapp\\authorselector\\benchmarks\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{FEC33085-F704-4861-9937-11E288A98ADC}|AuthorSelector\\AuthorSelector.csproj|solutionrelative:authorselector\\benchmarks\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEC33085-F704-4861-9937-11E288A98ADC}|AuthorSelector\\AuthorSelector.csproj|c:\\maran\\study\\git\\dotnet\\dotnet-efcore\\efcoreoptimizationapp\\authorselector\\benchmarks\\queryfetchbenchmarks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEC33085-F704-4861-9937-11E288A98ADC}|AuthorSelector\\AuthorSelector.csproj|solutionrelative:authorselector\\benchmarks\\queryfetchbenchmarks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEC33085-F704-4861-9937-11E288A98ADC}|AuthorSelector\\AuthorSelector.csproj|c:\\maran\\study\\git\\dotnet\\dotnet-efcore\\efcoreoptimizationapp\\authorselector\\benchmarks\\selectfewercolumnsbenchmark.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEC33085-F704-4861-9937-11E288A98ADC}|AuthorSelector\\AuthorSelector.csproj|solutionrelative:authorselector\\benchmarks\\selectfewercolumnsbenchmark.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEC33085-F704-4861-9937-11E288A98ADC}|AuthorSelector\\AuthorSelector.csproj|c:\\maran\\study\\git\\dotnet\\dotnet-efcore\\efcoreoptimizationapp\\authorselector\\benchmarks\\implicitandexplicitbenchmark.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEC33085-F704-4861-9937-11E288A98ADC}|AuthorSelector\\AuthorSelector.csproj|solutionrelative:authorselector\\benchmarks\\implicitandexplicitbenchmark.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "QueryFetchBenchmarks.cs",
+              "DocumentMoniker": "C:\\Maran\\Study\\Git\\Dotnet\\dotnet-EFCore\\EFCoreOptimizationApp\\AuthorSelector\\Benchmarks\\QueryFetchBenchmarks.cs",
+              "RelativeDocumentMoniker": "AuthorSelector\\Benchmarks\\QueryFetchBenchmarks.cs",
+              "ToolTip": "C:\\Maran\\Study\\Git\\Dotnet\\dotnet-EFCore\\EFCoreOptimizationApp\\AuthorSelector\\Benchmarks\\QueryFetchBenchmarks.cs",
+              "RelativeToolTip": "AuthorSelector\\Benchmarks\\QueryFetchBenchmarks.cs",
+              "ViewState": "AgIAAMUAAAAAAAAAAAAuwNIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T21:11:14.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SelectFewerColumnsBenchmark.cs",
+              "DocumentMoniker": "C:\\Maran\\Study\\Git\\Dotnet\\dotnet-EFCore\\EFCoreOptimizationApp\\AuthorSelector\\Benchmarks\\SelectFewerColumnsBenchmark.cs",
+              "RelativeDocumentMoniker": "AuthorSelector\\Benchmarks\\SelectFewerColumnsBenchmark.cs",
+              "ToolTip": "C:\\Maran\\Study\\Git\\Dotnet\\dotnet-EFCore\\EFCoreOptimizationApp\\AuthorSelector\\Benchmarks\\SelectFewerColumnsBenchmark.cs",
+              "RelativeToolTip": "AuthorSelector\\Benchmarks\\SelectFewerColumnsBenchmark.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAjwBwAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T21:03:43.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ImplicitAndExplicitBenchmark.cs",
+              "DocumentMoniker": "C:\\Maran\\Study\\Git\\Dotnet\\dotnet-EFCore\\EFCoreOptimizationApp\\AuthorSelector\\Benchmarks\\ImplicitAndExplicitBenchmark.cs",
+              "RelativeDocumentMoniker": "AuthorSelector\\Benchmarks\\ImplicitAndExplicitBenchmark.cs",
+              "ToolTip": "C:\\Maran\\Study\\Git\\Dotnet\\dotnet-EFCore\\EFCoreOptimizationApp\\AuthorSelector\\Benchmarks\\ImplicitAndExplicitBenchmark.cs",
+              "RelativeToolTip": "AuthorSelector\\Benchmarks\\ImplicitAndExplicitBenchmark.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T21:01:32.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Maran\\Study\\Git\\Dotnet\\dotnet-EFCore\\EFCoreOptimizationApp\\AuthorSelector\\Benchmarks\\README.md",
+              "RelativeDocumentMoniker": "AuthorSelector\\Benchmarks\\README.md",
+              "ToolTip": "C:\\Maran\\Study\\Git\\Dotnet\\dotnet-EFCore\\EFCoreOptimizationApp\\AuthorSelector\\Benchmarks\\README.md",
+              "RelativeToolTip": "AuthorSelector\\Benchmarks\\README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2024-12-09T21:00:37.342Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
