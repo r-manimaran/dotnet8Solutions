@@ -1,0 +1,6 @@
+@Central_Package_management_HostAddress = http://localhost:5272
+
+GET {{Central_Package_management_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
