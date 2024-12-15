@@ -1,3 +1,6 @@
+using System.Collections.Concurrent;
+using System.Threading.Channels;
+using ThumbnailGenerator.Models;
 using ThumbnailGenerator.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +12,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<ImageService>();
+builder.Services.AddSingleton(_ =>
+{
+    var channel = Channel.CreateBounded<ThumbnailGeneratorJob>(new BoundedChannelOptions(100)
+    {
+        FullMode = BoundedChannelFullMode.Wait
+    });
+    return channel;
+});
+builder.Services.AddSingleton<ConcurrentDictionary<string, ThumbnailGenerationStatus>>();
+builder.Services.AddHostedService<ThumbnailGenerationService>();
 
 var app = builder.Build();
 

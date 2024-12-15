@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThumbnailGenerator", "ThumbnailGenerator\ThumbnailGenerator.csproj", "{EC35FA0F-2964-41F3-85AD-F43F3AFD609D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{782C5093-CAC2-4DF2-AB11-128DDCC8B3A8}"
+	ProjectSection(SolutionItems) = preProject
+		REDME.md = REDME.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

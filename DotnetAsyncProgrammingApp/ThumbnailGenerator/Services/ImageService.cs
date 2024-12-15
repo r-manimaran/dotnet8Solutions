@@ -55,6 +55,9 @@ namespace ThumbnailGenerator.Services
                 await resizedImage.SaveAsync(thumbnailPath);
 
                 thumbnailPaths.Add(thumbnailPath);
+
+                //Introudce a delay to replicate a realtime delay
+                await Task.Delay(5_000);
             }
             return thumbnailPaths;
         }
