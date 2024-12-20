@@ -1,0 +1,53 @@
+name: Build
+
+on:
+    workflow_dispatch:
+    push:
+        branches:
+            - main
+
+
+env:
+    DOTNET_VERSION: "9.0.x"
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v3
+
+            - name: Setup .NET
+              uses: actions/setup-dotnet@v3
+              with:
+                dotnet-version: ${{ env.DOTNET_VERSION }}
+            
+            - name: Restore
+              uses: dotnet restore ./EFCoreRelationsApp.sln
+            
+            - name: Build
+              uses: dotnet build ./EFCoreRelationsApp.sln --configuration Release --no-restore
+            
+            - name: Test
+              uses: dotnet test ./EFCoreRelationsApp.sln --configuration Release --no-restore --no-build
+    
+    stylecop:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v3
+
+            - name: Setup .Net
+              uses: actions/setup-dotnet@v3
+
+            - name: Restore Dependencies
+              uses: dotnet restore ./EFCoreRelationsApp.sln
+
+            - name: Build the project
+              uses: dotnet build ./EFCoreRelationsApp.sln --configuration Release --no-restore
+
+            - name: Run Stylecop Analysis
+              uses: dotnet build ./EFCoreRelationsApp.sln --configuration Release --no-restore /warnaserror
+
