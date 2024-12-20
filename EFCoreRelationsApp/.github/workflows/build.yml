@@ -24,13 +24,13 @@ jobs:
                 dotnet-version: ${{ env.DOTNET_VERSION }}
             
             - name: Restore
-              uses: dotnet restore ./EFCoreRelationsApp.sln
+              run: dotnet restore ./EFCoreRelationsApp.sln
             
             - name: Build
-              uses: dotnet build ./EFCoreRelationsApp.sln --configuration Release --no-restore
+              run: dotnet build ./EFCoreRelationsApp.sln --configuration Release --no-restore
             
             - name: Test
-              uses: dotnet test ./EFCoreRelationsApp.sln --configuration Release --no-restore --no-build
+              run: dotnet test ./EFCoreRelationsApp.sln --configuration Release --no-restore --no-build
     
     stylecop:
         runs-on: ubuntu-latest
@@ -43,11 +43,11 @@ jobs:
               uses: actions/setup-dotnet@v3
 
             - name: Restore Dependencies
-              uses: dotnet restore ./EFCoreRelationsApp.sln
+              run: dotnet restore ./EFCoreRelationsApp.sln
 
             - name: Build the project
-              uses: dotnet build ./EFCoreRelationsApp.sln --configuration Release --no-restore
+              run: dotnet build ./EFCoreRelationsApp.sln --configuration Release --no-restore
 
             - name: Run Stylecop Analysis
-              uses: dotnet build ./EFCoreRelationsApp.sln --configuration Release --no-restore /warnaserror
+              run: dotnet build ./EFCoreRelationsApp.sln --configuration Release --no-restore /warnaserror
 
