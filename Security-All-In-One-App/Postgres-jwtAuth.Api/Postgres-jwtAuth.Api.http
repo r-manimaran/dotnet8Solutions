@@ -1,0 +1,6 @@
+@Postgres_jwtAuth.Api_HostAddress = http://localhost:5022
+
+GET {{Postgres_jwtAuth.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
