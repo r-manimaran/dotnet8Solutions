@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoleBasedAuthorization", "RoleBasedAuthorization\RoleBasedAuthorization.csproj", "{E07110BE-F2A5-434E-AC11-C06E7B607B88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolicyBasedAuthorization", "PolicyBasedAuthorization\PolicyBasedAuthorization.csproj", "{8FA95752-CB88-4F29-B0BD-B65577B730B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermissionAuthorization", "PermissionAuthorization\PermissionAuthorization.csproj", "{B5C31F7B-A9C5-4981-8540-8FE398CF21B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomAuthorizeAttribute", "CustomAuthorizeAttribute\CustomAuthorizeAttribute.csproj", "{687BB166-29C5-4BBA-A32C-4C2E81003455}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Postgres-jwtAuth.Api", "Postgres-jwtAuth.Api\Postgres-jwtAuth.Api.csproj", "{EADFC0E4-6D99-421C-8BFE-8B39DC1C3C45}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E07110BE-F2A5-434E-AC11-C06E7B607B88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E07110BE-F2A5-434E-AC11-C06E7B607B88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E07110BE-F2A5-434E-AC11-C06E7B607B88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E07110BE-F2A5-434E-AC11-C06E7B607B88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FA95752-CB88-4F29-B0BD-B65577B730B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FA95752-CB88-4F29-B0BD-B65577B730B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FA95752-CB88-4F29-B0BD-B65577B730B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FA95752-CB88-4F29-B0BD-B65577B730B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5C31F7B-A9C5-4981-8540-8FE398CF21B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5C31F7B-A9C5-4981-8540-8FE398CF21B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5C31F7B-A9C5-4981-8540-8FE398CF21B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5C31F7B-A9C5-4981-8540-8FE398CF21B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{687BB166-29C5-4BBA-A32C-4C2E81003455}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{687BB166-29C5-4BBA-A32C-4C2E81003455}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{687BB166-29C5-4BBA-A32C-4C2E81003455}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{687BB166-29C5-4BBA-A32C-4C2E81003455}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EADFC0E4-6D99-421C-8BFE-8B39DC1C3C45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EADFC0E4-6D99-421C-8BFE-8B39DC1C3C45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EADFC0E4-6D99-421C-8BFE-8B39DC1C3C45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EADFC0E4-6D99-421C-8BFE-8B39DC1C3C45}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
