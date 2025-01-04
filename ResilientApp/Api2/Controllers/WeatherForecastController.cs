@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace Api2.Controllers
 {
@@ -19,6 +20,7 @@ namespace Api2.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
+        [EnableRateLimiting("BucketTokenLimiter")]
         public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 15).Select(index => new WeatherForecast
