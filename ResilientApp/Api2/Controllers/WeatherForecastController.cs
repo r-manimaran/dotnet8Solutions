@@ -68,8 +68,13 @@ namespace Api2.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
+            var options = new DistributedCacheEntryOptions()
+            {
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromSeconds(30)
+            };
 
-            await distributedCache.SetStringAsync("weatherData", JsonSerializer.Serialize(data), CancellationToken.None);
+            await distributedCache.SetStringAsync("weatherData", JsonSerializer.Serialize(data),
+                                            options, CancellationToken.None);
             return Ok(data);
 
         }
