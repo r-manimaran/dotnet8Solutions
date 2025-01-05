@@ -281,6 +281,41 @@ namespace Api1.Controllers
                 return StatusCode((int)result.StatusCode);
         }
 
+        [HttpGet("caching")]
+        public async Task<IActionResult> Cache()
+        {
+           // await Task.Delay(3000);
+            var data = await _httpClient.GetFromJsonAsync<IEnumerable<WeatherForecast>>("https://localhost:7296/WeatherForecast");
+            return Ok(data);
+        }
+
+        [HttpGet("clear-cache")]
+        public async Task<IActionResult> ClearCache()
+        {
+            var data = await _httpClient.GetAsync("https://localhost:7296/WeatherForecast/clear-cache");
+
+            return NoContent();
+        }
+
+        [HttpGet("caching-redis")]
+        public async Task<IActionResult> CacheRedis()
+        {
+            //
+            // await Task.Delay(3000);
+            var data = await _httpClient.GetFromJsonAsync<IEnumerable<WeatherForecast>>("https://localhost:7296/WeatherForecast/with-rediscache");
+            return Ok(data);
+        }
+
+        [HttpGet("clear-redis-cache")]
+        public async Task<IActionResult> ClearRedisCache()
+        {
+            
+            var data = await _httpClient.GetAsync("https://localhost:7296/WeatherForecast/clear-redis-cache");
+
+            return NoContent();
+        }
+
+
         // Helper Methods
         private async Task<HttpResponseMessage> ConnectToAPI()
         {
