@@ -1,4 +1,5 @@
 using BlogPostApi.Data;
+using BlogPostApi.Exceptions;
 using BlogPostApi.Extensions;
 using BlogPostApi.Models;
 using BlogPostApi.Repositories;
@@ -80,6 +81,7 @@ if (app.Environment.IsDevelopment())
 
    app.ApplyMigrationAndSeedData();
 }
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseHttpsRedirection();
 
