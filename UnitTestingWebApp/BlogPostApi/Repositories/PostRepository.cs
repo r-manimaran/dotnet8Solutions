@@ -56,6 +56,11 @@ public class PostRepository : IPostRepository
         return Task.CompletedTask;
     }
 
+    public async Task<bool> ExistsAsync(Guid id)
+    {
+        return await _dbContext.Posts.AnyAsync(p => p.Id == id);
+    }
+
     public async Task<IEnumerable<PostResponse>> GetAllAsync()
     {
         var posts = await _dbContext.Posts.AsNoTracking()
@@ -74,6 +79,63 @@ public class PostRepository : IPostRepository
             throw new Exception("Post not found");
         }
         var response = post.Adapt<PostResponse>();
+        return response;
+    }
+
+    public async Task<IEnumerable<PostResponse>> GetPostsByCategoryAsync(int categoryId)
+    {
+        var posts = await _dbContext.Posts
+                            .AsNoTracking()
+                            .Include(x=>x.Category)
+                            .Where(p=>p.CategoryId == categoryId)
+                            .ToListAsync();
+        // Map to response
+        var response = posts.Adapt<IEnumerable<PostResponse>>();
+        return response;
+    }
+
+    public async Task<PostStatistics> GetPostStatisticsAsync()
+    {
+        var statistics = new PostStatistics
+        {
+            TotalPosts = await _dbContext.Posts.CountAsync(),
+            TotalCategories = await _dbContext.Set<Category>().CountAsync(),
+            MostRecentPost = await _dbContext.Posts.MaxAsync(p => p.CreatedDate),
+            PostsPerCategory = await _dbContext.Posts
+                                 .GroupBy(p => p.Category.Name)
+                                 .Select(g => new { Category = g.Key, Count = g.Count() })
+                                 .ToDictionaryAsync(x => x.Category, x => x.Count)
+
+        };
+        return statistics;
+    }
+
+    public async Task<IEnumerable<PostResponse>> GetRecentPostsAsync(int count)
+    {
+        if(count <= 0)
+            throw new ArgumentException("Count must be greater than Zero", nameof(count));
+
+        var posts = await _dbContext.Posts
+                        .AsNoTracking()
+                        .Include(x=>x.Category)
+                        .OrderByDescending(p=>p.CreatedDate)
+                        .Take(count)
+                        .ToListAsync();
+        var response = posts.Adapt<IEnumerable<PostResponse>>();
+        return response;
+    }
+
+    public async Task<IEnumerable<PostResponse>> SearchPostsAsync(string searchTerm)
+    {
+       if(string.IsNullOrEmpty(searchTerm))
+            throw new ArgumentException("Search term cannot be empty",nameof(searchTerm));
+
+        var posts = await _dbContext.Posts
+                      .AsNoTracking()
+                      .Include(x => x.Category)
+                      .Where(p => p.Title.Contains(searchTerm) || p.Content.Contains(searchTerm))
+                      .ToListAsync();
+        var response = posts.Adapt<IEnumerable<PostResponse>>();
         return response;
     }
 

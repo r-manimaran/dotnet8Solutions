@@ -36,7 +36,10 @@ builder.Services.AddDbContext<PostDbContext>(options =>
         var postFaker = new Faker<Post>()
         .UseSeed(1)
         .RuleFor(x=>x.Id, f=>f.Random.Guid())        
-        .RuleFor(x=>x.Title, f=>f.Lorem.Sentence())
+        // Generate Lorem Ipsum engine sentence
+
+
+        .RuleFor(x=>x.Title, f=>f.Lorem.Text())
         .RuleFor(x=>x.Content, f=>f.Lorem.Paragraph())
         .RuleFor(x=>x.CreatedDate, f=>f.Date.Past(1))
         // Insert Random Category.

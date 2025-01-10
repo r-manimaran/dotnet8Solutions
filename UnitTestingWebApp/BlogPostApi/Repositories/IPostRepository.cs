@@ -10,4 +10,11 @@ public interface IPostRepository
     Task<PostResponse> CreateAsync(Post post);
     Task<PostResponse> UpdateAsync(Post post);
     Task DeleteAsync(Guid id);
+
+    // New methods
+    Task<IEnumerable<PostResponse>> GetPostsByCategoryAsync(int categoryId);
+    Task<IEnumerable<PostResponse>> SearchPostsAsync(string searchTerm);
+    Task<IEnumerable<PostResponse>> GetRecentPostsAsync(int count);
+    Task<bool> ExistsAsync(Guid id);
+    Task<PostStatistics> GetPostStatisticsAsync();
 }

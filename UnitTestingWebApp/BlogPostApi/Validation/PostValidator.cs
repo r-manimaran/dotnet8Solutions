@@ -14,10 +14,13 @@ namespace BlogPostApi.Validation
             When(x => x != null, () =>
             {
                 RuleFor(p => p.Title)
-                            .NotNull()
-                            .NotEmpty()
-                            .MaximumLength(100)
-                            ;
+                            .NotNull().WithMessage("Title is required")
+                            .NotEmpty().WithMessage("Title is required")
+                            .MaximumLength(100);
+
+                RuleFor(p => p.Content)
+                        .NotNull().WithMessage("Content is required")
+                        .NotEmpty().WithMessage("Content is required");
             });
         }
     }
