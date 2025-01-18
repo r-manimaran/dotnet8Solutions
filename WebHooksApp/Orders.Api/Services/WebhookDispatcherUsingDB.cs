@@ -2,8 +2,10 @@
 using Orders.Api.Data;
 using Orders.Api.Models;
 using Orders.Api.Repositories;
+using System.Diagnostics;
 using System.Net.Http;
 using System.Text.Json;
+using System.Threading.Channels;
 
 namespace Orders.Api.Services;
 
@@ -11,15 +13,27 @@ internal sealed class WebhookDispatcherUsingDB
 {
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly WebhookDbContext _dbContext;
+    private readonly Channel<WebhookDispatch> _webhookChannel;
 
     public WebhookDispatcherUsingDB(IHttpClientFactory httpClientFactory,
-                                    WebhookDbContext dbContext)
+                                    WebhookDbContext dbContext,
+                                    Channel<WebhookDispatch> webhookChannel)
     {
         _httpClientFactory = httpClientFactory;
         _dbContext = dbContext;
+        _webhookChannel = webhookChannel;
     }
 
-    public async Task DispatchAsync<T>(string eventType, T data)
+    public async Task DispatchAsync<T>(string eventType, T data) where T : notnull
+    {
+        using Activity? activity = Activity.Current?.Source.StartActivity($"{eventType} - Dispatch Webhook");
+        activity?.SetTag("EventType", eventType);
+        // Write to the channel, instead of earlier implementation of dispatching the webhook payload as part
+        // of Create order Post request.
+        await _webhookChannel.Writer.WriteAsync(new WebhookDispatch(eventType, data, activity?.Id));
+    }
+
+    public async Task ProcessAsync<T>(string eventType, T data)
     {
         var subscriptions = await _dbContext.WebhookSubscriptions
                             .AsNoTracking()

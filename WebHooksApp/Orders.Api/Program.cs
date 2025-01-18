@@ -2,8 +2,10 @@ using Microsoft.EntityFrameworkCore;
 using Orders.Api.Data;
 using Orders.Api.Endpoints;
 using Orders.Api.Extensions;
+using Orders.Api.OpenTelemetry;
 using Orders.Api.Repositories;
 using Orders.Api.Services;
+using System.Threading.Channels;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +23,22 @@ builder.Services.AddScoped<WebhookDispatcherUsingDB>();
 
 builder.Services.AddDbContext<WebhookDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("webhooks")));
+
+// Added BackgroundJob Service to process the Subscriptions
+builder.Services.AddHostedService<WebhookProccesor>();
+
+// Added the Channel with max 100 message and On Full, set it to Wait
+builder.Services.AddSingleton(_ =>
+{
+    return Channel.CreateBounded<WebhookDispatch>(new BoundedChannelOptions(100)
+    {
+        FullMode = BoundedChannelFullMode.Wait
+    });
+});
+
+// Add the custom ActivitySource to the OpenTelemetry
+builder.Services.AddOpenTelemetry()
+    .WithTracing(tracking => tracking.AddSource(DiagnosticConfig.ActivitySource.Name));
 
 var app = builder.Build();
 
