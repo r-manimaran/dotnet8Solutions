@@ -16,7 +16,7 @@
 - Sample JSON:
 ```json
 {
-     "page": 2,
+    "page": 2,
     "pageSize": 10,
     "totalCount": 50,
     "hasNextPage": true,
