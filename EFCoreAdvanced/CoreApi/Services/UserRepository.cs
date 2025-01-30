@@ -28,7 +28,7 @@ public class UserRepository : IUserRepository
             .Include(u => u.Address)
             .Where(u => u.Orders.Any(o => o.Total > 1000))
             .OrderBy(u => u.FirstName)
-            .ToListAsync();            
+            .ToListAsync();
     }
 
     public async Task<User> GetUserWithRawSql(int id)
@@ -37,5 +37,20 @@ public class UserRepository : IUserRepository
             .FromSqlInterpolated($"SELECT * FROM Users WHERE Id= {id} AND IsDeleted=0")
             .Include(u => u.Orders)
             .FirstOrDefaultAsync();
+    }
+
+    public async Task<List<User>> SearchUsers(string? searchTerm, string? exactMatch)
+    {
+        var query = _context.Users.AsNoTracking();
+
+        if (!string.IsNullOrWhiteSpace(searchTerm))
+        {
+           query = query.Where(u=>u.EmailAddress.Value.Contains(searchTerm));
+        }
+        else
+        {
+            query = query.Where(u => u.EmailAddress.Value == exactMatch);
+        }
+        return await query.ToListAsync();
     }
 }

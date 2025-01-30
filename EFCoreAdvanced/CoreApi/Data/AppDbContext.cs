@@ -37,9 +37,17 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<User>()
                     .Property(u => u.Metadata)
                     .HasConversion(
-                       v => v==null? null : JsonSerializer.Serialize(v,_jsonSerializerOptions),
-                       v => v==null? null : JsonSerializer.Deserialize<UserMetadata>(v, _jsonSerializerOptions))
-                       .HasColumnType("json"); // For Postgres use jsonb
+                       v => v == null ? null : JsonSerializer.Serialize(v, _jsonSerializerOptions),
+                       v => v == null ? null : JsonSerializer.Deserialize<UserMetadata>(v, _jsonSerializerOptions));
+                       //.HasColumnType("json"); // For Postgres use jsonb
+
+      
+        modelBuilder.Entity<User>(b =>
+        {
+            b.Property(u => u.EmailAddress)
+                .HasConversion(v => v.Value, v => new Email(v));
+        });
+        
     }
 
     protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)

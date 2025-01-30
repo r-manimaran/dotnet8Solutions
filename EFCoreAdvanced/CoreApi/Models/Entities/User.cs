@@ -11,11 +11,29 @@ public class User
     public Email EmailAddress { get; set; }
     public UserMetadata Metadata { get; set; } //Json conversion
     public bool IsDeleted { get; set; }
-    public List<Order> Orders { get; set; } 
+    public virtual List<Order> Orders { get; set; } 
 }
 
-public class Email
+public record Email
 {
-    [Key]
-    public string EmailAddress { get; set; }
+    public Email(string value)
+    {
+        if(string.IsNullOrWhiteSpace(value))
+        {
+            throw new ArgumentException("Email address is required");
+        }
+
+        if (!IsValidEmail(value))
+        {
+            throw new ArgumentException("Invalid email address");
+        }
+        Value = value;
+    }
+
+    public string Value { get; set; }
+
+    private static bool IsValidEmail(string email)
+    {
+        return new EmailAddressAttribute().IsValid(email);
+    }
 }

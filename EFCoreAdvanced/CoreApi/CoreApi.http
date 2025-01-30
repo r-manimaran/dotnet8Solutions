@@ -1,6 +1,11 @@
-@CoreApi_HostAddress = http://localhost:5273
+@CoreApi_HostAddress = https://localhost:7135
 
 GET {{CoreApi_HostAddress}}/weatherforecast/
 Accept: application/json
+
+###
+
+@id=0
+GET {{CoreApi_HostAddress}}/api/users/users/{{id}}
 
 ###

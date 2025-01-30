@@ -8,5 +8,5 @@ public class Order
     public decimal Total { get; set; }
     public bool IsDeleted { get; set; }
     public int UserId { get; set; }
-    public User User { get; set; }
+    public virtual User User { get; set; }
 }
